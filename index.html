@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candice Saint Claire — Independent Acquisitions Specialist</title>
+  <meta name="description" content="Candice Saint Claire is an independent acquisitions specialist with a focus on rare, archival, and historically significant materials — uncovering the latent value others overlook." />
+  <link rel="canonical" href="https://www.candicesaintclaire.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #0d0e10;
+      --bg2:       #13151a;
+      --surface:   #1a1d24;
+      --border:    #2a2d36;
+      --teal:      #5bbfb5;
+      --teal-dim:  #3d9990;
+      --cream:     #e8e0d0;
+      --cream-dim: #a09888;
+      --white:     #f5f2ed;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: 6rem 0; }
+
+    /* ── HEADER / NAV ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(13,14,16,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    nav a {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(91,191,181,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--cream);
+    }
+
+    .hero-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--teal);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+
+    .hero-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-dim);
+      max-width: 560px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.75s forwards;
+    }
+
+    .hero-cta {
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.9s forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn:hover { background: var(--teal); color: var(--bg); }
+
+    /* ── SECTION TITLES ── */
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-body p {
+      color: var(--cream-dim);
+      margin-bottom: 1.25rem;
+      font-size: 0.975rem;
+    }
+
+    .about-body p strong {
+      color: var(--cream);
+      font-weight: 400;
+    }
+
+    .credentials {
+      border-left: 1px solid var(--border);
+      padding-left: 2.5rem;
+    }
+
+    .credential-item {
+      margin-bottom: 2rem;
+    }
+
+    .credential-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-dim);
+      margin-bottom: 0.3rem;
+    }
+
+    .credential-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      font-weight: 400;
+    }
+
+    /* ── APPROACH ── */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .approach-card {
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      background: var(--surface);
+      transition: border-color 0.25s;
+    }
+    .approach-card:hover { border-color: var(--teal-dim); }
+
+    .approach-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .approach-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .approach-desc {
+      font-size: 0.875rem;
+      color: var(--cream-dim);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg2); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info p {
+      font-size: 0.925rem;
+      color: var(--cream-dim);
+      margin-bottom: 2rem;
+    }
+
+    .contact-email-link {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--teal);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    .contact-email-link:hover { color: var(--white); }
+
+    .contact-email-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+
+    /* ── FORM ── */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+
+    .form-input,
+    .form-textarea {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--teal-dim); }
+
+    .form-textarea { resize: vertical; min-height: 130px; }
+
+    .form-submit {
+      align-self: flex-start;
+      background: transparent;
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      padding: 0.85rem 2rem;
+      text-transform: uppercase;
+      transition: background 0.25s, color 0.25s;
+    }
+    .form-submit:hover { background: var(--teal); color: var(--bg); }
+
+    .form-success {
+      display: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--teal);
+      padding: 1rem 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      color: var(--cream-dim);
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: var(--border);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── DIVIDER ── */
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .credentials { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 2rem; }
+      .approach-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+      nav a:first-child { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <span class="nav-name">Candice Saint Claire</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <p class="hero-eyebrow">Independent Acquisitions Specialist</p>
+      <h1 class="hero-name">Candice<br><em>Saint Claire</em></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-statement">Identifying rare, archival, and historically significant materials — and recognizing the latent value that others overlook.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-body reveal">
+          <p class="section-label">About</p>
+          <h2 class="section-title">Value isn't always visible at first glance.</h2>
+          <p>I specialize in sourcing and presenting rare, archival, and historically significant collections — materials that carry cultural weight and genuine market value, often acquired through unconventional channels.</p>
+          <p>With a professional background in high-stakes investigation and documentation, I bring a rigorous, evidence-based methodology to every acquisition. I understand provenance, I understand context, and I understand what makes an item significant beyond its surface.</p>
+          <p><strong>I work with auction houses, private collectors, and institutional buyers</strong> to ensure materials of consequence reach the right hands — evaluated honestly, represented accurately, and handled with appropriate care.</p>
+        </div>
+        <div class="credentials reveal">
+          <div class="credential-item">
+            <p class="credential-label">Specialization</p>
+            <p class="credential-value">Rare &amp; Archival Materials</p>
+          </div>
+          <div class="credential-item">
+            <p class="credential-label">Background</p>
+            <p class="credential-value">Insurance Investigation &amp; Claims Analysis</p>
+          </div>
+          <div class="credential-item">
+            <p class="credential-label">Methodology</p>
+            <p class="credential-value">Research-First, Documentation-Driven</p>
+          </div>
+          <div class="credential-item">
+            <p class="credential-label">Focus Areas</p>
+            <p class="credential-value">Historical Documents · Sports &amp; Cultural Archives · Ephemera</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Methodology</p>
+        <h2 class="section-title">How I work.</h2>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-card reveal">
+          <p class="approach-number">01</p>
+          <p class="approach-title">Science</p>
+          <p class="approach-desc">Methodical research and provenance verification. Every claim is documented. Every detail is traceable. Nothing is assumed.</p>
+        </div>
+        <div class="approach-card reveal">
+          <p class="approach-number">02</p>
+          <p class="approach-title">Intuition</p>
+          <p class="approach-desc">Pattern recognition honed over years of investigative work. The ability to see what an item is — and what it means — before others do.</p>
+        </div>
+        <div class="approach-card reveal">
+          <p class="approach-number">03</p>
+          <p class="approach-title">Strategy</p>
+          <p class="approach-desc">Positioning materials for the right market, the right buyer, and the right moment. Value recognized is value realized.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">Let's talk.</h2>
+          <p>I welcome inquiries from auction specialists, private collectors, and institutional buyers regarding available collections, acquisition consultations, or general correspondence.</p>
+          <a href="mailto:cstcl@pm.me" class="contact-email-link">cstcl@pm.me</a>
+          <p class="contact-email-label">Direct Email</p>
+        </div>
+        <div class="reveal">
+          <!-- FORMSPREE: Replace YOUR_FORM_ID with your Formspree form ID -->
+          <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+          >
+            <div class="form-group">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-input" type="text" id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="org">Organization</label>
+              <input class="form-input" type="text" id="org" name="organization" placeholder="Auction house, institution, or company" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" required placeholder="Tell me about your inquiry..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
+          <p class="form-success" id="formSuccess">Thank you — I'll be in touch shortly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Candice Saint Claire</span>
+    <span class="footer-note">Independent Acquisitions Specialist</span>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Formspree AJAX submission
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
