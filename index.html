@@ -1,123 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Candice Saint Claire</title>
-  <meta name="description" content="Independent archival researcher and acquisitions specialist specializing in historically and culturally significant artifacts." />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candice Saint Claire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Courier New", Courier, monospace;
+            background: #fafafa;
+            color: #222;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        main {
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        p {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        
+        a {
+            color: #222;
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+        
+        a:hover {
+            background: #222;
+            color: #fafafa;
+        }
+        
+        .divider {
+            margin: 1.5rem 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        
+        .contact {
+            font-size: 0.85rem;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 1rem;
+            font-size: 0.75rem;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Candice <span>Saint Claire</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div style="display:flex;align-items:center;gap:1rem;">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-        </button>
-        <button class="nav-mobile-toggle" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <main class="page">
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-content container fade-up">
-        <div class="hero-label">
-          <span class="mono">Olympia, Washington</span>
-        </div>
-        <h1 class="hero-title">
-          I specialize in uncovering,<br>
-          preserving, and <em>contextualizing</em><br>
-          historically &amp; culturally<br>
-          significant artifacts —
-        </h1>
-        <div class="hero-divider"></div>
-        <p class="hero-body delay-2 fade-up">
-          and building modern commerce around the stories they tell.
+    <main>
+        <h1>Candice Saint Claire</h1>
+        <p>Olympia, WA</p>
+        
+        <hr class="divider">
+        
+        <p class="contact">
+            <a href="mailto:cstcl@pm.me">cstcl@pm.me</a><br>
+            <a href="https://github.com/candicesaintclaire">github.com/candicesaintclaire</a>
         </p>
-        <a href="work.html" class="hero-cta delay-3 fade-up">
-          Take a look at some of what I've found
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="width:14px;height:14px;flex-shrink:0;">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-      </div>
-      <div class="hero-image">
-        <img src="candice.png" alt="Candice Saint Claire" />
-      </div>
-    </section>
-
-    <!-- Pillars -->
-    <section class="pillars">
-      <div class="container">
-        <div class="pillars-header observe">
-          <span class="mono">What I do</span>
-        </div>
-        <div class="pillars-grid">
-          <div class="pillar observe">
-            <div class="pillar-number">01</div>
-            <h2 class="pillar-title"><span>Find</span> &amp; Research</h2>
-            <p class="pillar-body">
-              Acquiring and identifying historically significant materials through disciplined methodology, institutional verification, and tools most resellers never touch.
-            </p>
-          </div>
-          <div class="pillar observe">
-            <div class="pillar-number">02</div>
-            <h2 class="pillar-title"><span>Share</span> &amp; Teach</h2>
-            <p class="pillar-body">
-              Writing about AI, research process, and modern reselling — because better tools and better thinking help everyone do this work more honestly.
-            </p>
-          </div>
-          <div class="pillar observe">
-            <div class="pillar-number">03</div>
-            <h2 class="pillar-title"><span>Build</span> &amp; Improve</h2>
-            <p class="pillar-body">
-              Developing the systems, workflows, and technologies that make rigorous research sustainable at the pace modern commerce demands.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-name">Candice Saint Claire</span>
-        <span class="footer-copy">candicesaintclaire.com</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    </main>
+    
+    <footer>Last updated: February 2026</footer>
 </body>
 </html>
